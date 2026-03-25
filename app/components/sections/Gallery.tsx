@@ -59,26 +59,29 @@ export default function Gallery() {
   return (
     <SectionWrapper id="gallery" className="bg-cream py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
-        {/* Section header */}
-        <div className="mb-16 max-w-2xl">
-          <p className="font-sans text-xs font-medium uppercase tracking-[0.2em] text-sand">
-            Gallery
-          </p>
-          <h2 className="mt-4 font-serif text-4xl font-light leading-tight text-charcoal md:text-5xl">
+        {/* Section header — centered for variety */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          className="mb-16 text-center"
+        >
+          <h2 className="font-serif text-4xl font-light leading-tight text-charcoal md:text-5xl">
             The space
           </h2>
-        </div>
+        </motion.div>
 
-        {/* Gallery grid */}
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+        {/* Gallery grid — wider gaps for luxury breathing room */}
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
           {images.map((img, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{
-                duration: 0.6,
+                duration: 0.5,
                 ease: [0.25, 0.1, 0.25, 1],
                 delay: i * 0.06,
               }}

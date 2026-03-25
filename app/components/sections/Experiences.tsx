@@ -24,15 +24,18 @@ const featured = [
 const additional = [
   {
     title: "Ice Baths",
-    description: "Cold immersion at 3°C for inflammation, energy, and mental clarity.",
+    description:
+      "Cold immersion at 3°C for inflammation, energy, and mental clarity.",
   },
   {
     title: "Mineral Baths",
-    description: "Hot magnesium and mineral soaking pools. Ease tension and restore electrolytes.",
+    description:
+      "Hot magnesium and mineral soaking pools. Ease tension and restore electrolytes.",
   },
   {
     title: "Red Light Therapy",
-    description: "LED panels for cellular regeneration, collagen production, and faster recovery.",
+    description:
+      "LED panels for cellular regeneration, collagen production, and faster recovery.",
   },
   {
     title: "Yoga & Pilates",
@@ -46,25 +49,31 @@ const additional = [
 
 export default function Experiences() {
   return (
-    <SectionWrapper id="experiences" className="py-24 md:py-32">
+    <SectionWrapper id="experiences" className="pt-32 pb-24 md:pt-40 md:pb-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         {/* Section header */}
-        <div className="mb-16 max-w-2xl">
-          <p className="font-sans text-xs font-medium uppercase tracking-[0.2em] text-sand">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          className="mb-16 max-w-2xl"
+        >
+          <p className="font-sans text-xs font-medium uppercase tracking-[0.2em] text-sand-dark">
             Experiences
           </p>
           <h2 className="mt-4 font-serif text-4xl font-light leading-tight text-charcoal md:text-5xl">
-            Your way to restore
+            Ways to restore
           </h2>
           <p className="mt-6 font-sans text-base leading-relaxed text-stone">
             From the intensity of a 3°C cold plunge to the gentle warmth of our
             mineral baths, every experience is designed to bring your body back
             to balance.
           </p>
-        </div>
+        </motion.div>
 
         {/* Featured experiences with photos */}
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-2 md:gap-10">
           {featured.map((exp, i) => (
             <motion.div
               key={exp.title}
@@ -74,7 +83,7 @@ export default function Experiences() {
               transition={{
                 duration: 0.6,
                 ease: [0.25, 0.1, 0.25, 1],
-                delay: i * 0.1,
+                delay: i * 0.15,
               }}
               className="group"
             >

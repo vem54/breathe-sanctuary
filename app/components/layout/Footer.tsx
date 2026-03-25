@@ -1,4 +1,12 @@
 export default function Footer() {
+  const navLinks = [
+    { label: "Experiences", href: "#experiences" },
+    { label: "Gallery", href: "#gallery" },
+    { label: "Dining", href: "#dining" },
+    { label: "Pricing", href: "#pricing" },
+    { label: "Find Us", href: "#location" },
+  ];
+
   return (
     <footer className="bg-charcoal py-16 text-warm-white/70">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
@@ -20,17 +28,15 @@ export default function Footer() {
               Explore
             </p>
             <div className="mt-4 flex flex-col gap-3">
-              {["Experiences", "Gallery", "Dining", "Pricing", "Find Us"].map(
-                (label) => (
-                  <a
-                    key={label}
-                    href={`#${label.toLowerCase().replace(" ", "-")}`}
-                    className="font-sans text-sm transition-colors hover:text-warm-white"
-                  >
-                    {label}
-                  </a>
-                )
-              )}
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="font-sans text-sm transition-colors hover:text-warm-white"
+                >
+                  {link.label}
+                </a>
+              ))}
             </div>
           </div>
 
@@ -40,32 +46,16 @@ export default function Footer() {
               Connect
             </p>
             <div className="mt-4 flex flex-col gap-3 font-sans text-sm">
-              <a
-                href="#contact"
-                className="transition-colors hover:text-warm-white"
-              >
-                WhatsApp
-              </a>
-              <a
-                href="#contact"
-                className="transition-colors hover:text-warm-white"
-              >
-                Email
-              </a>
-              <a
-                href="#contact"
-                className="transition-colors hover:text-warm-white"
-              >
-                Instagram
-              </a>
+              <span>WhatsApp</span>
+              <span>Email</span>
+              <span>Instagram</span>
             </div>
           </div>
         </div>
 
         <div className="mt-16 border-t border-warm-white/10 pt-8">
           <p className="font-sans text-xs text-warm-white/40">
-            &copy; {new Date().getFullYear()} Breathe Sanctuary. All rights
-            reserved.
+            &copy; 2026 Breathe Sanctuary. All rights reserved.
           </p>
         </div>
       </div>
