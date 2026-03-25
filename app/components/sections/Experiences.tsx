@@ -8,52 +8,54 @@ const featured = [
   {
     title: "Thermal Circuit",
     description:
-      "Traditional Finnish sauna, infrared sauna, and eucalyptus steam room. Move between heat and rest at your own pace.",
-    image: "/images/sauna-stones.jpg",
-    alt: "Traditional sauna stones with wooden ladle pouring water",
+      "Three distinct heat experiences in one session. Our traditional Finnish sauna holds steady at 80-90°C with löyly steam rituals. The infrared sauna operates at a gentler 50-60°C, using far-infrared wavelengths that penetrate deep tissue for muscle recovery and joint relief. The eucalyptus steam room runs at 45°C with 100% humidity for respiratory cleansing and skin purification. Move between heat and rest at your own pace.",
+    image: "/images/sauna-man-relaxing.jpg",
+    alt: "Guest relaxing in the Finnish sauna at Breathe Sanctuary, Phuket",
   },
   {
     title: "The Pool",
     description:
-      "Our open-air pool sits at the heart of the sanctuary. Lounge poolside, float in the turquoise water, or cool off between thermal sessions.",
+      "Our open-air pool sits at the heart of the sanctuary, a 200-square-metre organic-shaped pool surrounded by palm trees and river stone borders. Float in the turquoise water, lounge poolside on teak daybeds, or cool off between thermal sessions. The pool area includes a shallow wading section and built-in jacuzzi jets.",
     image: "/images/pool-aerial-full.jpg",
-    alt: "Aerial view of the organic-shaped pool with guests swimming",
+    alt: "Aerial view of the open-air pool at Breathe wellness spa in Phuket",
   },
 ];
 
 const additional = [
   {
-    title: "Ice Baths",
+    title: "Ice Baths & Cold Plunge",
     description:
-      "Cold immersion at 3°C for inflammation, energy, and mental clarity.",
+      "Cold immersion pools maintained at 3°C. A single 2-3 minute session reduces inflammation, spikes norepinephrine for sustained energy, and sharpens mental clarity. Part of every day pass.",
   },
   {
-    title: "Mineral Baths",
+    title: "Mineral & Magnesium Baths",
     description:
-      "Hot magnesium and mineral soaking pools. Ease tension and restore electrolytes.",
+      "Hot soaking pools infused with magnesium chloride and trace minerals at 38-40°C. Eases muscle tension, restores electrolyte balance, and softens skin. Ideal after a cold plunge.",
   },
   {
     title: "Red Light Therapy",
     description:
-      "LED panels for cellular regeneration, collagen production, and faster recovery.",
+      "Full-body LED panels delivering 630-660nm red and 810-850nm near-infrared wavelengths. Supports cellular regeneration, collagen production, and faster recovery between training sessions.",
   },
   {
     title: "IV Therapy",
     description:
-      "Vitamin and nutrient infusions tailored to hydration, recovery, and immune support.",
+      "Vitamin and nutrient infusions administered by licensed practitioners. Options include hydration drips, immune support formulas, NAD+, and recovery blends tailored to your needs.",
   },
   {
     title: "Blood Testing",
     description:
-      "Comprehensive blood panels to track your health markers and guide your wellness plan.",
+      "Comprehensive blood panels covering metabolic, hormonal, and inflammatory markers. Results guide your personal wellness plan and help you track progress over time.",
   },
   {
     title: "Yoga & Pilates",
-    description: "Daily movement classes in our dedicated studio.",
+    description:
+      "Daily classes in our dedicated studio. Morning vinyasa flow, restorative afternoon sessions, and mat pilates for core and flexibility. All levels welcome.",
   },
   {
     title: "Private Rooms",
-    description: "Exclusive suites for solo sessions or couples.",
+    description:
+      "Exclusive suites for solo sessions or couples. Your own sanctuary within the sanctuary, with private thermal access and dedicated service.",
   },
 ];
 
@@ -73,12 +75,13 @@ export default function Experiences() {
             Experiences
           </p>
           <h2 className="mt-4 font-serif text-4xl font-light leading-tight text-charcoal md:text-5xl">
-            Ways to restore
+            Thermal wellness, your way
           </h2>
           <p className="mt-6 font-sans text-base leading-relaxed text-stone">
-            From the intensity of a 3°C cold plunge to the gentle warmth of our
-            mineral baths, every experience is designed to bring your body back
-            to balance.
+            Breathe Sanctuary brings together sauna, cold plunge, red light
+            therapy, and holistic recovery under one roof in Phuket. Every
+            session is designed to reduce inflammation, restore energy, and bring
+            your body back to balance.
           </p>
         </motion.div>
 
