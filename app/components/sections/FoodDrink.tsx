@@ -21,6 +21,7 @@ export default function FoodDrink() {
               src="/images/poolside-women.jpg"
               alt="Guests relaxing poolside at Breathe Sanctuary"
               fill
+              quality={90}
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
             />

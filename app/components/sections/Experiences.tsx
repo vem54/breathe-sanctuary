@@ -92,6 +92,7 @@ export default function Experiences() {
                   src={exp.image}
                   alt={exp.alt}
                   fill
+                  quality={90}
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
