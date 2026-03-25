@@ -25,7 +25,7 @@ export default function Card({
         ease: [0.25, 0.1, 0.25, 1],
         delay: index * 0.1,
       }}
-      className="group relative overflow-hidden"
+      className="group relative cursor-pointer overflow-hidden"
     >
       <div className="aspect-[4/5] overflow-hidden bg-cream">
         <div

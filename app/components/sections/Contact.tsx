@@ -109,7 +109,7 @@ export default function Contact() {
                 ease: [0.25, 0.1, 0.25, 1],
                 delay: i * 0.1,
               }}
-              className="group flex flex-col items-center border border-warm-white/10 px-6 py-8 text-center transition-all duration-300 hover:border-warm-white/30"
+              className="group flex cursor-pointer flex-col items-center border border-warm-white/10 px-6 py-8 text-center transition-all duration-300 hover:border-warm-white/30"
             >
               <span className="text-sand transition-colors group-hover:text-warm-white">
                 {method.icon}
