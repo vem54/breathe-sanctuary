@@ -46,9 +46,20 @@ export default function Footer() {
               Connect
             </p>
             <div className="mt-4 flex flex-col gap-3 font-sans text-sm">
-              <span>WhatsApp</span>
-              <span>Email</span>
-              <span>Instagram</span>
+              <a
+                href="mailto:hello@breathephuket.com"
+                className="transition-colors hover:text-warm-white"
+              >
+                hello@breathephuket.com
+              </a>
+              <a
+                href="https://www.instagram.com/breathe.phuket/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-warm-white"
+              >
+                @breathe.phuket
+              </a>
             </div>
           </div>
         </div>
