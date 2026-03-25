@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import StructuredData from "@/app/components/StructuredData";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -40,7 +41,10 @@ export default function RootLayout({
       lang="en"
       className={`${cormorant.variable} ${dmSans.variable} antialiased`}
     >
-      <body>{children}</body>
+      <body>
+        <StructuredData />
+        {children}
+      </body>
     </html>
   );
 }
