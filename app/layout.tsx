@@ -19,11 +19,11 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Breathe Sanctuary | Thermal Wellness, Phuket",
   description:
-    "A premium thermal spa and wellness sanctuary in Phuket, Thailand. Sauna, ice baths, red light therapy, yoga, and more.",
+    "A premium thermal spa and wellness sanctuary in Phuket, Thailand. Sauna, ice baths, red light therapy, IV therapy, blood testing, yoga, and more.",
   openGraph: {
     title: "Breathe Sanctuary | Thermal Wellness, Phuket",
     description:
-      "A premium thermal spa and wellness sanctuary in Phuket, Thailand.",
+      "A premium thermal spa and wellness sanctuary in Phuket, Thailand. Thermal circuits, IV therapy, blood testing, and recovery.",
     type: "website",
     locale: "en_US",
     siteName: "Breathe Sanctuary",
