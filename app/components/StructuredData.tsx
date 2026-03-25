@@ -97,6 +97,24 @@ const businessSchema = {
       },
       {
         "@type": "OfferCatalog",
+        name: "Private Room",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Private Room",
+              description:
+                "Exclusive private suite for solo sessions or couples with private thermal access and dedicated service.",
+            },
+            price: "3000",
+            priceCurrency: "THB",
+            availability: "https://schema.org/InStock",
+          },
+        ],
+      },
+      {
+        "@type": "OfferCatalog",
         name: "Membership",
         itemListElement: [
           {
