@@ -21,6 +21,21 @@ const tiers = [
     featured: false,
   },
   {
+    name: "Private Room",
+    price: "฿3,000",
+    period: "per hour",
+    features: [
+      "Exclusive private suite",
+      "Solo sessions or couples",
+      "Private thermal access",
+      "Dedicated service",
+      "Book via WhatsApp or email",
+    ],
+    cta: "Book Now",
+    ctaHref: "#contact",
+    featured: false,
+  },
+  {
     name: "Membership",
     price: "Inquire",
     period: "",
@@ -64,7 +79,7 @@ export default function Pricing() {
         </motion.div>
 
         {/* Cards */}
-        <div className="mx-auto grid max-w-3xl gap-8 md:grid-cols-2">
+        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
           {tiers.map((tier, i) => (
             <motion.div
               key={tier.name}

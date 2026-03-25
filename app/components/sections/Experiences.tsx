@@ -55,7 +55,7 @@ const additional = [
   {
     title: "Private Rooms",
     description:
-      "Exclusive suites for solo sessions or couples. Your own sanctuary within the sanctuary, with private thermal access and dedicated service.",
+      "Exclusive suites for solo sessions or couples. Your own sanctuary within the sanctuary, with private thermal access and dedicated service. ฿3,000 per hour. Book via WhatsApp or email.",
   },
 ];
 
