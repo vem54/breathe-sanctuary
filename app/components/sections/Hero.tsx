@@ -6,20 +6,23 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* Background image — will be replaced with video when ready */}
+      {/* Video background */}
       <div className="absolute inset-0">
-        <Image
-          src="/images/pool-aerial-swimmer.jpg"
-          alt="Aerial view of the Breathe Sanctuary pool with swimmer floating near the Breathe logo"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/images/pool-aerial-swimmer.jpg"
+          className="h-full w-full object-cover"
+        >
+          <source src="/video/hero.webm" type="video/webm" />
+          <source src="/video/hero.mp4" type="video/mp4" />
+        </video>
       </div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/25" />
+      <div className="absolute inset-0 bg-black/20" />
 
       {/* Content */}
       <div className="relative flex h-full flex-col items-center justify-center px-6">
