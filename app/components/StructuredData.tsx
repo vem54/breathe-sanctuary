@@ -140,7 +140,7 @@ const businessSchema = {
         "@type": "Service",
         name: "Thermal Circuit",
         description:
-          "Traditional Finnish sauna, infrared sauna, and eucalyptus steam room. Move between heat and rest at your own pace.",
+          "Traditional Finnish sauna at 90°C, infrared sauna, and steam room. Move between heat and rest at your own pace.",
       },
     },
     {
