@@ -7,11 +7,13 @@ import Pricing from "@/app/components/sections/Pricing";
 import Location from "@/app/components/sections/Location";
 import Contact from "@/app/components/sections/Contact";
 import Footer from "@/app/components/layout/Footer";
+import FloatingInstagram from "@/app/components/ui/FloatingInstagram";
 
 export default function Home() {
   return (
     <>
       <Header />
+      <FloatingInstagram />
       <main>
         <Hero />
         <Experiences />
