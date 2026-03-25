@@ -59,6 +59,7 @@ export default function Location() {
               src="/images/property-tote-walk.jpg"
               alt="Guest walking through the Breathe Sanctuary grounds"
               fill
+              quality={90}
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
