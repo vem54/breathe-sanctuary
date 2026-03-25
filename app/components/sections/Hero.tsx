@@ -1,22 +1,25 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Hero() {
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* Video background — placeholder gradient until real video */}
+      {/* Background image — will be replaced with video when ready */}
       <div className="absolute inset-0">
-        {/* Replace this div with <video> when real footage is ready:
-            <video autoPlay muted loop playsInline className="h-full w-full object-cover">
-              <source src="/video/hero.mp4" type="video/mp4" />
-            </video>
-        */}
-        <div className="h-full w-full bg-gradient-to-br from-[#2D3E2D] via-[#4A6741] to-[#1A2F1A]" />
+        <Image
+          src="/images/pool-aerial-swimmer.jpg"
+          alt="Aerial view of the Breathe Sanctuary pool with swimmer floating near the Breathe logo"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
       </div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/30" />
+      <div className="absolute inset-0 bg-black/25" />
 
       {/* Content */}
       <div className="relative flex h-full flex-col items-center justify-center px-6">

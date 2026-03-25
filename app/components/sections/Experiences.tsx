@@ -1,56 +1,46 @@
 "use client";
 
+import { motion } from "framer-motion";
+import Image from "next/image";
 import SectionWrapper from "@/app/components/ui/SectionWrapper";
-import Card from "@/app/components/ui/Card";
 
-const experiences = [
+const featured = [
   {
-    title: "Traditional Sauna",
+    title: "Thermal Circuit",
     description:
-      "Classic Finnish-style heat at 80-100°C. Deep relaxation, detoxification, and improved circulation.",
-    image: "/images/placeholder-sauna.jpg",
+      "Traditional Finnish sauna, infrared sauna, and eucalyptus steam room. Move between heat and rest at your own pace.",
+    image: "/images/sauna-stones.jpg",
+    alt: "Traditional sauna stones with wooden ladle pouring water",
   },
   {
-    title: "Infrared Sauna",
+    title: "The Pool",
     description:
-      "Gentle, penetrating heat for deep tissue recovery. Lower temperature, deeper therapeutic benefits.",
-    image: "/images/placeholder-infrared.jpg",
+      "Our open-air pool sits at the heart of the sanctuary. Lounge poolside, float in the turquoise water, or cool off between thermal sessions.",
+    image: "/images/pool-aerial-full.jpg",
+    alt: "Aerial view of the organic-shaped pool with guests swimming",
   },
+];
+
+const additional = [
   {
     title: "Ice Baths",
-    description:
-      "Cold immersion at 3°C. Reduce inflammation, boost energy, and sharpen mental clarity.",
-    image: "/images/placeholder-ice.jpg",
+    description: "Cold immersion at 3°C for inflammation, energy, and mental clarity.",
   },
   {
     title: "Mineral Baths",
-    description:
-      "Hot magnesium and mineral soaking pools. Ease tension, restore electrolytes, and soften skin.",
-    image: "/images/placeholder-mineral.jpg",
+    description: "Hot magnesium and mineral soaking pools. Ease tension and restore electrolytes.",
   },
   {
     title: "Red Light Therapy",
-    description:
-      "NASA-developed LED panels for cellular regeneration, collagen production, and faster recovery.",
-    image: "/images/placeholder-redlight.jpg",
-  },
-  {
-    title: "Steam Room",
-    description:
-      "Eucalyptus-infused steam for respiratory relief, skin purification, and deep relaxation.",
-    image: "/images/placeholder-steam.jpg",
+    description: "LED panels for cellular regeneration, collagen production, and faster recovery.",
   },
   {
     title: "Yoga & Pilates",
-    description:
-      "Daily movement classes in our dedicated studio. Restore balance through breath and body.",
-    image: "/images/placeholder-yoga.jpg",
+    description: "Daily movement classes in our dedicated studio.",
   },
   {
     title: "Private Rooms",
-    description:
-      "Exclusive suites for solo sessions or couples. Your own sanctuary within the sanctuary.",
-    image: "/images/placeholder-private.jpg",
+    description: "Exclusive suites for solo sessions or couples.",
   },
 ];
 
@@ -64,7 +54,7 @@ export default function Experiences() {
             Experiences
           </p>
           <h2 className="mt-4 font-serif text-4xl font-light leading-tight text-charcoal md:text-5xl">
-            Eight ways to restore
+            Your way to restore
           </h2>
           <p className="mt-6 font-sans text-base leading-relaxed text-stone">
             From the intensity of a 3°C cold plunge to the gentle warmth of our
@@ -73,16 +63,64 @@ export default function Experiences() {
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {experiences.map((exp, i) => (
-            <Card
+        {/* Featured experiences with photos */}
+        <div className="grid gap-8 md:grid-cols-2">
+          {featured.map((exp, i) => (
+            <motion.div
               key={exp.title}
-              title={exp.title}
-              description={exp.description}
-              image={exp.image}
-              index={i}
-            />
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{
+                duration: 0.6,
+                ease: [0.25, 0.1, 0.25, 1],
+                delay: i * 0.1,
+              }}
+              className="group"
+            >
+              <div className="relative aspect-[3/2] overflow-hidden">
+                <Image
+                  src={exp.image}
+                  alt={exp.alt}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+              <div className="pt-6">
+                <h3 className="font-serif text-3xl font-light text-charcoal">
+                  {exp.title}
+                </h3>
+                <p className="mt-3 font-sans text-sm leading-relaxed text-stone">
+                  {exp.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Additional experiences — text list */}
+        <div className="mt-20 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {additional.map((exp, i) => (
+            <motion.div
+              key={exp.title}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                ease: [0.25, 0.1, 0.25, 1],
+                delay: i * 0.08,
+              }}
+              className="border-t border-sand/40 pt-5"
+            >
+              <h3 className="font-serif text-xl font-light text-charcoal">
+                {exp.title}
+              </h3>
+              <p className="mt-2 font-sans text-sm leading-relaxed text-stone">
+                {exp.description}
+              </p>
+            </motion.div>
           ))}
         </div>
       </div>
