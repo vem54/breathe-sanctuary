@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -30,7 +29,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
-          className="font-serif text-6xl font-light tracking-[0.3em] text-white sm:text-7xl md:text-8xl lg:text-9xl"
+          className="font-serif text-5xl font-light tracking-[0.2em] text-white sm:text-6xl sm:tracking-[0.25em] md:text-8xl lg:text-9xl lg:tracking-[0.3em]"
         >
           BREATHE
         </motion.h1>

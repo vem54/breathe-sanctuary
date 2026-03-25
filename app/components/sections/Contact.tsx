@@ -6,8 +6,8 @@ import SectionWrapper from "@/app/components/ui/SectionWrapper";
 const contactMethods = [
   {
     label: "WhatsApp",
-    value: "Coming soon",
-    href: "#",
+    value: "Message us",
+    href: "#contact",
     icon: (
       <svg
         className="h-5 w-5"
@@ -21,8 +21,8 @@ const contactMethods = [
   },
   {
     label: "Email",
-    value: "Coming soon",
-    href: "#",
+    value: "Write to us",
+    href: "#contact",
     icon: (
       <svg
         className="h-5 w-5"
@@ -42,8 +42,8 @@ const contactMethods = [
   },
   {
     label: "Instagram",
-    value: "Coming soon",
-    href: "#",
+    value: "Follow along",
+    href: "#contact",
     icon: (
       <svg
         className="h-5 w-5"
@@ -65,42 +65,27 @@ export default function Contact() {
   return (
     <SectionWrapper id="contact" className="bg-charcoal py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
-        <div className="mx-auto max-w-2xl text-center">
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="font-sans text-xs font-medium uppercase tracking-[0.2em] text-sand"
-          >
-            Get in Touch
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="mt-4 font-serif text-4xl font-light leading-tight text-warm-white md:text-5xl"
-          >
-            We are here for you
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="mt-6 font-sans text-base leading-relaxed text-warm-white/60"
-          >
-            Have questions about your visit? Reach out through any of the
-            channels below. Walk-ins are always welcome.
-          </motion.p>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          className="mx-auto max-w-2xl text-center"
+        >
+          <h2 className="font-serif text-4xl font-light leading-tight text-warm-white md:text-5xl">
+            Come find us
+          </h2>
+          <p className="mt-6 font-sans text-base leading-relaxed text-warm-white/70">
+            Walk-ins are always welcome. Reach out if you have questions about
+            your visit.
+          </p>
+        </motion.div>
 
         {/* Contact methods */}
         <div className="mx-auto mt-16 grid max-w-2xl gap-6 sm:grid-cols-3">
           {contactMethods.map((method, i) => (
-            <motion.a
+            <motion.div
               key={method.label}
-              href={method.href}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -109,9 +94,9 @@ export default function Contact() {
                 ease: [0.25, 0.1, 0.25, 1],
                 delay: i * 0.1,
               }}
-              className="group flex cursor-pointer flex-col items-center border border-warm-white/10 px-6 py-8 text-center transition-all duration-300 hover:border-warm-white/30"
+              className="group flex flex-col items-center border border-warm-white/10 px-6 py-8 text-center"
             >
-              <span className="text-sand transition-colors group-hover:text-warm-white">
+              <span className="text-sand">
                 {method.icon}
               </span>
               <p className="mt-4 font-sans text-sm font-medium text-warm-white">
@@ -120,7 +105,7 @@ export default function Contact() {
               <p className="mt-1 font-sans text-xs text-warm-white/50">
                 {method.value}
               </p>
-            </motion.a>
+            </motion.div>
           ))}
         </div>
       </div>
