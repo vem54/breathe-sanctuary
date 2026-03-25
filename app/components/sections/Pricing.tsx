@@ -58,7 +58,8 @@ export default function Pricing() {
           </h2>
           <p className="mx-auto mt-6 max-w-lg font-sans text-base leading-relaxed text-stone">
             Walk in for the day or commit to your practice with a membership. No
-            contracts, no hidden fees.
+            contracts, no hidden fees. IV therapy and blood testing are available
+            as add-on services.
           </p>
         </motion.div>
 
