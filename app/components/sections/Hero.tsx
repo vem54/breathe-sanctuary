@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* Video background — no poster image, bg color matches first frame */}
+      {/* Video background with poster for fast LCP */}
       <div className="absolute inset-0 bg-[#3a6b5e]">
         <video
           autoPlay
@@ -13,6 +13,7 @@ export default function Hero() {
           loop
           playsInline
           preload="auto"
+          poster="/video/hero-poster.jpg"
           className="h-full w-full object-cover"
         >
           <source src="/video/hero.mp4" type="video/mp4" />
@@ -22,7 +23,7 @@ export default function Hero() {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/20" />
 
-      {/* Content */}
+      {/* Content — h1 renders immediately for SEO, animation is visual only */}
       <div className="relative flex h-full flex-col items-center justify-center px-6">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -39,13 +40,13 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.8 }}
           className="mt-6"
         >
-          <p className="font-sans text-xs font-light uppercase tracking-[0.3em] text-white/70">
-            Thermal Wellness &middot; Phuket
+          <p className="font-sans text-sm font-light uppercase tracking-[0.3em] text-white/70">
+            Thermal Wellness Sanctuary &middot; Phuket, Thailand
           </p>
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator — minimal line only */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -55,12 +56,8 @@ export default function Hero() {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-2"
         >
-          <span className="font-sans text-[10px] uppercase tracking-[0.2em] text-white/50">
-            Scroll
-          </span>
-          <div className="h-8 w-px bg-white/30" />
+          <div className="h-10 w-px bg-white/30" />
         </motion.div>
       </motion.div>
     </section>

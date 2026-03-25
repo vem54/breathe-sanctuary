@@ -68,7 +68,7 @@ export default function Gallery() {
         >
           <ParallaxImage
             src="/images/pool-breathe-logo.jpg"
-            alt="BREATHE logo on pool floor with palm tree shadow"
+            alt="Breathe Sanctuary thermal spa pool in Phuket with palm tree shadow over logo"
             className="aspect-[21/9] w-full"
             sizes="100vw"
           />
@@ -84,7 +84,7 @@ export default function Gallery() {
           >
             <ParallaxImage
               src="/images/sauna-man-relaxing.jpg"
-              alt="Guest relaxing in traditional wooden sauna"
+              alt="Guest relaxing in Finnish sauna at Breathe wellness spa Phuket"
               className="aspect-[4/5]"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
@@ -118,7 +118,7 @@ export default function Gallery() {
         >
           <ParallaxImage
             src="/images/poolside-lounging-duo.jpg"
-            alt="Two guests lounging poolside on teal mats under tree shadows"
+            alt="Guests lounging poolside at Breathe thermal wellness sanctuary Phuket"
             className="aspect-[21/9] w-full"
             sizes="100vw"
           />
