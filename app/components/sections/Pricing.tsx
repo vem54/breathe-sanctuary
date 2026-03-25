@@ -81,7 +81,11 @@ export default function Pricing() {
                   : "bg-cream text-charcoal"
               }`}
             >
-              <p className="font-sans text-xs font-medium uppercase tracking-[0.2em] text-sand-dark">
+              <p
+                className={`font-sans text-xs font-medium uppercase tracking-[0.2em] ${
+                  tier.featured ? "text-sand" : "text-sand-dark"
+                }`}
+              >
                 {tier.name}
               </p>
               <div className="mt-4 flex items-baseline gap-2">

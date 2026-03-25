@@ -7,7 +7,6 @@ const contactMethods = [
   {
     label: "WhatsApp",
     value: "Message us",
-    href: "#contact",
     icon: (
       <svg
         className="h-5 w-5"
@@ -22,7 +21,6 @@ const contactMethods = [
   {
     label: "Email",
     value: "Write to us",
-    href: "#contact",
     icon: (
       <svg
         className="h-5 w-5"
@@ -43,7 +41,6 @@ const contactMethods = [
   {
     label: "Instagram",
     value: "Follow along",
-    href: "#contact",
     icon: (
       <svg
         className="h-5 w-5"
