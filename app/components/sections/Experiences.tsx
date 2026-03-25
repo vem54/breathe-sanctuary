@@ -38,6 +38,16 @@ const additional = [
       "LED panels for cellular regeneration, collagen production, and faster recovery.",
   },
   {
+    title: "IV Therapy",
+    description:
+      "Vitamin and nutrient infusions tailored to hydration, recovery, and immune support.",
+  },
+  {
+    title: "Blood Testing",
+    description:
+      "Comprehensive blood panels to track your health markers and guide your wellness plan.",
+  },
+  {
     title: "Yoga & Pilates",
     description: "Daily movement classes in our dedicated studio.",
   },
