@@ -46,6 +46,7 @@ export default function Footer() {
               Connect
             </p>
             <div className="mt-4 flex flex-col gap-3 font-sans text-sm">
+              <span>WhatsApp</span>
               <a
                 href="mailto:hello@breathephuket.com"
                 className="transition-colors hover:text-warm-white"
