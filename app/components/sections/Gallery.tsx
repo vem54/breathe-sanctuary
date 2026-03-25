@@ -1,65 +1,51 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import { useRef } from "react";
 import SectionWrapper from "@/app/components/ui/SectionWrapper";
 
-const images = [
-  {
-    src: "/images/pool-breathe-logo.jpg",
-    alt: "BREATHE logo on pool floor with palm tree shadow",
-    span: "md:col-span-2 md:row-span-2",
-    aspect: "aspect-square",
-  },
-  {
-    src: "/images/sauna-man-relaxing.jpg",
-    alt: "Guest relaxing in traditional wooden sauna",
-    span: "",
-    aspect: "aspect-[4/5]",
-  },
-  {
-    src: "/images/pool-edge-woman.jpg",
-    alt: "Guest sitting at pool edge with Breathe text visible in the water",
-    span: "",
-    aspect: "aspect-[4/5]",
-  },
-  {
-    src: "/images/property-tote-closeup.jpg",
-    alt: "Guest walking with Breathe tote bag past pool and wooden pavilions",
-    span: "",
-    aspect: "aspect-[4/5]",
-  },
-  {
-    src: "/images/pool-edge-stones.jpg",
-    alt: "Pool edge detail with river stones and tree shadows",
-    span: "",
-    aspect: "aspect-[4/5]",
-  },
-  {
-    src: "/images/poolside-lounging-duo.jpg",
-    alt: "Two guests lounging poolside on teal mats under tree shadows",
-    span: "md:col-span-2",
-    aspect: "aspect-[2/1]",
-  },
-  {
-    src: "/images/brand-yoga-mat.jpg",
-    alt: "Breathe branded yoga mat with tree logo on poolside deck",
-    span: "",
-    aspect: "aspect-square",
-  },
-  {
-    src: "/images/brand-bottle-handoff.jpg",
-    alt: "Hands passing a Breathe water bottle by the pool",
-    span: "",
-    aspect: "aspect-square",
-  },
-];
+function ParallaxImage({
+  src,
+  alt,
+  className,
+  sizes,
+  priority = false,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+  sizes: string;
+  priority?: boolean;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
+
+  return (
+    <div ref={ref} className={`relative overflow-hidden ${className}`}>
+      <motion.div style={{ y }} className="absolute inset-[-10%]">
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className="object-cover"
+          sizes={sizes}
+          priority={priority}
+        />
+      </motion.div>
+    </div>
+  );
+}
 
 export default function Gallery() {
   return (
     <SectionWrapper id="gallery" className="bg-cream py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
-        {/* Section header — centered for variety */}
+        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -72,34 +58,121 @@ export default function Gallery() {
           </h2>
         </motion.div>
 
-        {/* Gallery grid — wider gaps for luxury breathing room */}
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
-          {images.map((img, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{
-                duration: 0.5,
-                ease: [0.25, 0.1, 0.25, 1],
-                delay: i * 0.06,
-              }}
-              className={`relative overflow-hidden ${img.span} ${img.aspect}`}
-            >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                className="object-cover transition-transform duration-700 hover:scale-105"
-                sizes={
-                  img.span.includes("col-span-2")
-                    ? "(max-width: 768px) 100vw, 50vw"
-                    : "(max-width: 768px) 50vw, 25vw"
-                }
-              />
-            </motion.div>
-          ))}
+        {/* Row 1: Full-width hero image */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+        >
+          <ParallaxImage
+            src="/images/pool-breathe-logo.jpg"
+            alt="BREATHE logo on pool floor with palm tree shadow"
+            className="aspect-[21/9] w-full"
+            sizes="100vw"
+            priority
+          />
+        </motion.div>
+
+        {/* Row 2: Two equal columns */}
+        <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          >
+            <ParallaxImage
+              src="/images/sauna-man-relaxing.jpg"
+              alt="Guest relaxing in traditional wooden sauna"
+              className="aspect-[4/5]"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.6,
+              ease: [0.25, 0.1, 0.25, 1],
+              delay: 0.1,
+            }}
+          >
+            <ParallaxImage
+              src="/images/pool-edge-woman.jpg"
+              alt="Guest sitting at pool edge with Breathe text visible in the water"
+              className="aspect-[4/5]"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </motion.div>
+        </div>
+
+        {/* Row 3: Wide landscape */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          className="mt-5"
+        >
+          <ParallaxImage
+            src="/images/poolside-lounging-duo.jpg"
+            alt="Two guests lounging poolside on teal mats under tree shadows"
+            className="aspect-[21/9] w-full"
+            sizes="100vw"
+          />
+        </motion.div>
+
+        {/* Row 4: Three columns — detail shots */}
+        <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          >
+            <ParallaxImage
+              src="/images/pool-edge-stones.jpg"
+              alt="Pool edge detail with river stones and tree shadows"
+              className="aspect-square"
+              sizes="(max-width: 640px) 100vw, 33vw"
+            />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.6,
+              ease: [0.25, 0.1, 0.25, 1],
+              delay: 0.08,
+            }}
+          >
+            <ParallaxImage
+              src="/images/brand-yoga-mat.jpg"
+              alt="Breathe branded yoga mat with tree logo on poolside deck"
+              className="aspect-square"
+              sizes="(max-width: 640px) 100vw, 33vw"
+            />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.6,
+              ease: [0.25, 0.1, 0.25, 1],
+              delay: 0.16,
+            }}
+          >
+            <ParallaxImage
+              src="/images/brand-bottle-handoff.jpg"
+              alt="Hands passing a Breathe water bottle by the pool"
+              className="aspect-square"
+              sizes="(max-width: 640px) 100vw, 33vw"
+            />
+          </motion.div>
         </div>
       </div>
     </SectionWrapper>
