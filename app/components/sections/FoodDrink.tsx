@@ -9,7 +9,7 @@ export default function FoodDrink() {
     <SectionWrapper id="dining" className="py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="grid items-center gap-12 md:grid-cols-2 md:gap-20">
-          {/* Image — poolside scene showing the atmosphere */}
+          {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -26,7 +26,7 @@ export default function FoodDrink() {
             />
           </motion.div>
 
-          {/* Copy */}
+          {/* Copy — different heading pattern: no label, just serif + body */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -37,10 +37,7 @@ export default function FoodDrink() {
               delay: 0.1,
             }}
           >
-            <p className="font-sans text-xs font-medium uppercase tracking-[0.2em] text-sand">
-              Nourish
-            </p>
-            <h2 className="mt-4 font-serif text-4xl font-light leading-tight text-charcoal md:text-5xl">
+            <h2 className="font-serif text-4xl font-light leading-tight text-charcoal md:text-5xl">
               Food & drink
             </h2>
             <div className="mt-8 space-y-5 font-sans text-base leading-relaxed text-stone">

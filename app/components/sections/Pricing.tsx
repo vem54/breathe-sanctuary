@@ -16,31 +16,41 @@ const tiers = [
       "Pool & lounging areas",
       "Towel & locker included",
     ],
+    cta: "Visit Us",
+    ctaHref: "#location",
     featured: false,
   },
   {
-    name: "Monthly",
-    price: "TBD",
-    period: "per month",
+    name: "Membership",
+    price: "Inquire",
+    period: "",
     features: [
       "Unlimited daily access",
       "All Day Pass inclusions",
       "Priority booking for private rooms",
       "Yoga & pilates classes included",
-      "Guest passes (2 per month)",
+      "Guest passes",
       "Member-only events",
     ],
+    cta: "Get in Touch",
+    ctaHref: "#contact",
     featured: true,
   },
 ];
 
 export default function Pricing() {
   return (
-    <SectionWrapper id="pricing" className="bg-cream py-24 md:py-32">
+    <SectionWrapper id="pricing" className="py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
-        {/* Section header */}
-        <div className="mb-16 text-center">
-          <p className="font-sans text-xs font-medium uppercase tracking-[0.2em] text-sand">
+        {/* Section header — centered */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          className="mb-16 text-center"
+        >
+          <p className="font-sans text-xs font-medium uppercase tracking-[0.2em] text-sand-dark">
             Pricing
           </p>
           <h2 className="mt-4 font-serif text-4xl font-light leading-tight text-charcoal md:text-5xl">
@@ -50,7 +60,7 @@ export default function Pricing() {
             Walk in for the day or commit to your practice with a membership. No
             contracts, no hidden fees.
           </p>
-        </div>
+        </motion.div>
 
         {/* Cards */}
         <div className="mx-auto grid max-w-3xl gap-8 md:grid-cols-2">
@@ -63,29 +73,30 @@ export default function Pricing() {
               transition={{
                 duration: 0.6,
                 ease: [0.25, 0.1, 0.25, 1],
-                delay: i * 0.1,
+                delay: i * 0.15,
               }}
-              className={`flex flex-col p-10 ${
+              className={`flex flex-col p-8 md:p-10 ${
                 tier.featured
                   ? "bg-charcoal text-warm-white"
-                  : "bg-warm-white text-charcoal"
+                  : "bg-cream text-charcoal"
               }`}
             >
-              <p className="font-sans text-xs font-medium uppercase tracking-[0.2em] text-sand">
-
+              <p className="font-sans text-xs font-medium uppercase tracking-[0.2em] text-sand-dark">
                 {tier.name}
               </p>
               <div className="mt-4 flex items-baseline gap-2">
                 <span className="font-serif text-5xl font-light">
                   {tier.price}
                 </span>
-                <span
-                  className={`font-sans text-sm ${
-                    tier.featured ? "text-warm-white/60" : "text-stone"
-                  }`}
-                >
-                  {tier.period}
-                </span>
+                {tier.period && (
+                  <span
+                    className={`font-sans text-sm ${
+                      tier.featured ? "text-warm-white/60" : "text-stone"
+                    }`}
+                  >
+                    {tier.period}
+                  </span>
+                )}
               </div>
 
               <ul className="mt-8 flex-1 space-y-3">
@@ -103,14 +114,14 @@ export default function Pricing() {
               </ul>
 
               <a
-                href="#contact"
+                href={tier.ctaHref}
                 className={`mt-10 flex cursor-pointer items-center justify-center py-3 font-sans text-xs font-medium uppercase tracking-[0.15em] transition-all duration-300 ${
                   tier.featured
                     ? "border border-warm-white/30 text-warm-white hover:bg-warm-white/10"
                     : "border border-charcoal text-charcoal hover:bg-charcoal hover:text-warm-white"
                 }`}
               >
-                {tier.price === "TBD" ? "Contact Us" : "Visit Us"}
+                {tier.cta}
               </a>
             </motion.div>
           ))}
