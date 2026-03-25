@@ -8,14 +8,14 @@ const featured = [
   {
     title: "Thermal Circuit",
     description:
-      "Three distinct heat experiences in one session. Our traditional Finnish sauna holds steady at 80-90°C with löyly steam rituals. The infrared sauna operates at a gentler 50-60°C, using far-infrared wavelengths that penetrate deep tissue for muscle recovery and joint relief. The eucalyptus steam room runs at 45°C with 100% humidity for respiratory cleansing and skin purification. Move between heat and rest at your own pace.",
+      "Three distinct heat experiences in one session. Our traditional Finnish sauna runs at 90°C. The infrared sauna operates at a gentler temperature, using far-infrared wavelengths that penetrate deep tissue for muscle recovery and joint relief. The steam room provides high humidity for respiratory cleansing and skin purification. Move between heat and rest at your own pace.",
     image: "/images/sauna-man-relaxing.jpg",
     alt: "Guest relaxing in the Finnish sauna at Breathe Sanctuary, Phuket",
   },
   {
     title: "The Pool",
     description:
-      "Our open-air pool sits at the heart of the sanctuary, a 200-square-metre organic-shaped pool surrounded by palm trees and river stone borders. Float in the turquoise water, lounge poolside on teak daybeds, or cool off between thermal sessions. The pool area includes a shallow wading section and built-in jacuzzi jets.",
+      "Our open-air pool sits at the heart of the sanctuary. An organic-shaped pool surrounded by palm trees and river stone borders. Float in the turquoise water, lounge poolside on wooden daybeds, or cool off between thermal sessions.",
     image: "/images/pool-aerial-full.jpg",
     alt: "Aerial view of the open-air pool at Breathe wellness spa in Phuket",
   },
@@ -40,17 +40,17 @@ const additional = [
   {
     title: "IV Therapy",
     description:
-      "Vitamin and nutrient infusions administered by licensed practitioners. Options include hydration drips, immune support formulas, NAD+, and recovery blends tailored to your needs.",
+      "Vitamin and nutrient infusions tailored to hydration, recovery, and immune support. Multiple formulas available.",
   },
   {
     title: "Blood Testing",
     description:
-      "Comprehensive blood panels covering metabolic, hormonal, and inflammatory markers. Results guide your personal wellness plan and help you track progress over time.",
+      "Full blood panels to track your health markers and guide your wellness plan. Results help you understand what your body needs and measure progress over time.",
   },
   {
     title: "Yoga & Pilates",
     description:
-      "Daily classes in our dedicated studio. Morning vinyasa flow, restorative afternoon sessions, and mat pilates for core and flexibility. All levels welcome.",
+      "Classes in our dedicated studio. Yoga and pilates for all levels.",
   },
   {
     title: "Private Rooms",
