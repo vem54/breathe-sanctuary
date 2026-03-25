@@ -5,18 +5,16 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* Video background */}
-      <div className="absolute inset-0">
+      {/* Video background — no poster image, bg color matches first frame */}
+      <div className="absolute inset-0 bg-[#3a6b5e]">
         <video
           autoPlay
           muted
           loop
           playsInline
-          preload="metadata"
-          poster="/images/pool-aerial-swimmer.jpg"
+          preload="auto"
           className="h-full w-full object-cover"
         >
-          <source src="/video/hero.webm" type="video/webm" />
           <source src="/video/hero.mp4" type="video/mp4" />
         </video>
       </div>

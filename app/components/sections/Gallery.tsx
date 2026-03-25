@@ -71,7 +71,6 @@ export default function Gallery() {
             alt="BREATHE logo on pool floor with palm tree shadow"
             className="aspect-[21/9] w-full"
             sizes="100vw"
-            priority
           />
         </motion.div>
 
