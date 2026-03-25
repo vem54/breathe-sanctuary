@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import SectionWrapper from "@/app/components/ui/SectionWrapper";
 
 export default function FoodDrink() {
@@ -8,19 +9,20 @@ export default function FoodDrink() {
     <SectionWrapper id="dining" className="py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="grid items-center gap-12 md:grid-cols-2 md:gap-20">
-          {/* Image */}
+          {/* Image — poolside scene showing the atmosphere */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            className="aspect-[4/5] overflow-hidden bg-cream"
+            className="relative aspect-[4/5] overflow-hidden"
           >
-            <div
-              className="h-full w-full bg-sand/30 bg-cover bg-center"
-              style={{
-                backgroundImage: "url(/images/placeholder-food.jpg)",
-              }}
+            <Image
+              src="/images/poolside-women.jpg"
+              alt="Guests relaxing poolside at Breathe Sanctuary"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </motion.div>
 
