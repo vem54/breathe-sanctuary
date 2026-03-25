@@ -52,10 +52,10 @@ export const metadata: Metadata = {
     url: "https://breathephuket.com",
     images: [
       {
-        url: "/images/pool-breathe-logo.jpg",
-        width: 2000,
-        height: 1333,
-        alt: "Breathe Sanctuary pool in Phuket with palm tree shadows",
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Breathe Sanctuary — thermal wellness spa pool in Phuket, Thailand",
       },
     ],
   },
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     title: "Breathe Sanctuary — Thermal Wellness Spa in Phuket",
     description:
       "Sauna, cold plunge, red light therapy, IV therapy, and more. Walk-ins welcome. Day pass ฿650.",
-    images: ["/images/pool-breathe-logo.jpg"],
+    images: ["/images/og-image.jpg"],
   },
 };
 
