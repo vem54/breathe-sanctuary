@@ -12,6 +12,7 @@ export default function Hero() {
           muted
           loop
           playsInline
+          preload="metadata"
           poster="/images/pool-aerial-swimmer.jpg"
           className="h-full w-full object-cover"
         >

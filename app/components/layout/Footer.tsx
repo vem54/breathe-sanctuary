@@ -8,7 +8,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-charcoal py-16 text-warm-white/70">
+    <footer className="border-t border-warm-white/10 bg-charcoal py-16 text-warm-white/70">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="grid gap-12 md:grid-cols-3">
           {/* Brand */}

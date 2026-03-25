@@ -20,9 +20,10 @@
   --ease-luxury: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-/* Smooth scrolling */
+/* Smooth scrolling + prevent horizontal overflow */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
