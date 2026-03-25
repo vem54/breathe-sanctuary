@@ -71,11 +71,8 @@ export default function Pricing() {
                   : "bg-warm-white text-charcoal"
               }`}
             >
-              <p
-                className={`font-sans text-xs font-medium uppercase tracking-[0.2em] ${
-                  tier.featured ? "text-sand" : "text-sand"
-                }`}
-              >
+              <p className="font-sans text-xs font-medium uppercase tracking-[0.2em] text-sand">
+
                 {tier.name}
               </p>
               <div className="mt-4 flex items-baseline gap-2">
@@ -99,11 +96,7 @@ export default function Pricing() {
                       tier.featured ? "text-warm-white/80" : "text-stone"
                     }`}
                   >
-                    <span
-                      className={`mt-1.5 h-1 w-1 shrink-0 rounded-full ${
-                        tier.featured ? "bg-sand" : "bg-sand"
-                      }`}
-                    />
+                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-sand" />
                     {feature}
                   </li>
                 ))}
@@ -111,7 +104,7 @@ export default function Pricing() {
 
               <a
                 href="#contact"
-                className={`mt-10 flex items-center justify-center py-3 font-sans text-xs font-medium uppercase tracking-[0.15em] transition-all duration-300 ${
+                className={`mt-10 flex cursor-pointer items-center justify-center py-3 font-sans text-xs font-medium uppercase tracking-[0.15em] transition-all duration-300 ${
                   tier.featured
                     ? "border border-warm-white/30 text-warm-white hover:bg-warm-white/10"
                     : "border border-charcoal text-charcoal hover:bg-charcoal hover:text-warm-white"

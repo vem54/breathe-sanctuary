@@ -14,7 +14,7 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center font-sans font-medium tracking-wide uppercase transition-all duration-300";
+    "inline-flex cursor-pointer items-center justify-center font-sans font-medium tracking-wide uppercase transition-all duration-300";
   const sizes = {
     default: "px-8 py-3 text-xs",
     lg: "px-10 py-4 text-sm",
